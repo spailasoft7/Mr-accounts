@@ -1,3 +1,30 @@
+const msg = document.getElementById("msg");
+
+async function signup(){
+
+  const email =
+    document.getElementById("email").value;
+
+  const password =
+    document.getElementById("password").value;
+
+  const { data, error } =
+    await supabaseClient.auth.signUp({
+      email,
+      password
+    });
+
+  if(error){
+
+    msg.innerText = error.message;
+
+    return;
+  }
+
+  msg.innerText =
+    "Account created successfully!";
+}
+
 async function login(){
 
   const email =
@@ -13,7 +40,9 @@ async function login(){
     });
 
   if(error){
+
     msg.innerText = error.message;
+
     return;
   }
 
@@ -29,21 +58,9 @@ async function login(){
 
   msg.innerText = "Logged in!";
 
-  setTimeout(() => {
+  setTimeout(()=>{
 
-  const returnUrl =
-    localStorage.getItem("spaila_return_url");
+    window.location.href = "dashboard.html";
 
-  if (returnUrl) {
-
-    localStorage.removeItem("spaila_return_url");
-
-    window.location.href = returnUrl;
-
-  } else {
-
-    window.location.href =
-      "https://spailasoft7.github.io/Mr-accounts/dashboard.html";
-  }
-
-}, 800);
+  },1000);
+}
