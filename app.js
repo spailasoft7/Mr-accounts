@@ -29,22 +29,21 @@ async function login(){
 
   msg.innerText = "Logged in!";
 
-  setTimeout(()=>{
+  setTimeout(() => {
 
-    // 🔥 GET RETURN LOCATION
-    const returnUrl =
-      localStorage.getItem("spaila_return_url");
+  const returnUrl =
+    localStorage.getItem("spaila_return_url");
 
-    if(returnUrl){
+  if (returnUrl) {
 
-      localStorage.removeItem("spaila_return_url");
+    localStorage.removeItem("spaila_return_url");
 
-      window.location.href = returnUrl;
+    window.location.href = returnUrl;
 
-    } else {
+  } else {
 
-      window.location.href = "dashboard.html";
-    }
+    window.location.href =
+      "https://spailasoft7.github.io/Mr-accounts/dashboard.html";
+  }
 
-  }, 800);
-}
+}, 800);
