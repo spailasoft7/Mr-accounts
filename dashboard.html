@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+  <title>Dashboard</title>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+
+  <div class="box">
+
+    <h1>Welcome</h1>
+
+    <p id="userEmail"></p>
+
+    <button onclick="logout()">Logout</button>
+
+  </div>
+
+  <script src="spaila-core.js"></script>
+  <script>
+
+    const user = getSpailaUser();
+
+    if(!user){
+      window.location.href = "index.html";
+    }
+
+    document.getElementById("userEmail").innerText = user.email;
+
+  </script>
+
+</body>
+</html>
