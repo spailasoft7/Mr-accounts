@@ -6,32 +6,31 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <link rel="stylesheet" href="style.css">
-
   <script src="https://unpkg.com/@supabase/supabase-js@2"></script>
+  
+  <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
   <div class="box">
 
     <h1>Spailã Soft</h1>
 
-    <p>Create one account for all Spailã Soft apps.</p>
+    <p>Login to your universal account</p>
 
     <input id="email" type="email" placeholder="Email">
-
     <input id="password" type="password" placeholder="Password">
 
-    <button onclick="signup()">Create Account</button>
-
     <button onclick="login()">Login</button>
+    <button onclick="signup()">Sign Up</button>
 
     <p id="msg"></p>
 
   </div>
 
-  <script src="config.js"></script>
+  
   <script src="app.js"></script>
-
+  <script src="config.js"></script>
 </body>
 </html>

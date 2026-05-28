@@ -2,37 +2,35 @@
 <html>
 <head>
 
-  <title>Dashboard</title>
+  <title>Mr7 App</title>
 
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+  <script src="https://unpkg.com/@supabase/supabase-js@2"></script>
+
   <link rel="stylesheet" href="style.css">
 
 </head>
+
 <body>
 
   <div class="box">
 
-    <h1>Welcome</h1>
+    <h1>Mr7 App</h1>
 
-    <p id="userEmail"></p>
+    <p id="user"></p>
 
     <button onclick="logout()">Logout</button>
 
   </div>
 
+  <script src="config.js"></script>
   <script src="spaila-core.js"></script>
+  <script src="app-check.js"></script>
+
   <script>
-
-    const user = getSpailaUser();
-
-    if(!user){
-      window.location.href = "index.html";
-    }
-
-    document.getElementById("userEmail").innerText = user.email;
-
+    loadUser();
   </script>
 
 </body>

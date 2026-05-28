@@ -1,4 +1,4 @@
 const supabaseClient = supabase.createClient(
-"https://oeaniazwbyvgecevheiv.supabase.co",
+ "https://oeaniazwbyvgecevheiv.supabase.co",
 "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im9lYW5pYXp3Ynl2Z2VjZXZoZWl2Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzA5MDM3MTksImV4cCI6MjA4NjQ3OTcxOX0.5FLpBecoXOo0rWkeb4V_BhwvzzdfX5I-jAdggHzIwX8"
 );
