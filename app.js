@@ -36,35 +36,35 @@ async function login(){
     });
 
   if(error){
-
     msg.innerText = error.message;
     return;
   }
 
-  // 🔥 IMPORTANT: sync Supabase session
-  await supabaseClient.auth.setSession(
-    data.session
-  );
+  // 🔥 SINGLE SOURCE OF TRUTH TOKEN
+  const token =
+    data.session.access_token;
 
-  // SAVE TOKEN (your bridge system)
+  const user =
+    data.user;
+
+  // SAVE FOR ALL APPS
   localStorage.setItem(
     "spaila_token",
-    data.session.access_token
+    token
   );
 
-  // SAVE USER
   localStorage.setItem(
     "spaila_user",
-    JSON.stringify(data.user)
+    JSON.stringify(user)
   );
 
-  msg.innerText =
-    "Login successful!";
+  // OPTIONAL redirect back to app
+  const redirect =
+    localStorage.getItem("spaila_redirect");
 
-  setTimeout(() => {
-
-    window.location.href =
-      "dashboard.html";
-
-  }, 1000);
+  if(redirect){
+    window.location.href = redirect;
+  }else{
+    window.location.href = "dashboard.html";
+  }
 }
