@@ -41,10 +41,15 @@ async function login(){
     return;
   }
 
-  // SAVE SESSION
+  // 🔥 IMPORTANT: sync Supabase session
+  await supabaseClient.auth.setSession(
+    data.session
+  );
+
+  // SAVE TOKEN (your bridge system)
   localStorage.setItem(
-    "spaila_session",
-    JSON.stringify(data.session)
+    "spaila_token",
+    data.session.access_token
   );
 
   // SAVE USER
@@ -53,9 +58,9 @@ async function login(){
     JSON.stringify(data.user)
   );
 
-  msg.innerText = "Login successful!";
+  msg.innerText =
+    "Login successful!";
 
-  // REDIRECT
   setTimeout(() => {
 
     window.location.href =
